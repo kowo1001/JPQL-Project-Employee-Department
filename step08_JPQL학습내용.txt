@@ -1,0 +1,24 @@
+학습 내용
+
+1. jpql
+	실습 예제
+	select UPPER(?) from ? 별칭
+	select MAX(?) from ? 별칭
+	select ? from ? 별칭 where ? BETWEEN ? AND ?
+	select ? from ? 별칭 where LIKE ?
+	select ? from ? ORDER BY ? ASC or DESC
+	
+2. named query
+	1. 정적 쿼리
+		- entity 클래스가 메모리에 로딩시에 해당 sql문장을 사전에 검증해서 사용 가능하게 대기해 놓는 상태(로딩)
+		- 혹여 문법 문제가 발생시에 사용자들이 호출전에도 확인 및 처리가 가능한 전처리 작업 수행
+		- 권장 사항 
+			변수가 거의 없는 sql문장, 성능이 조금은 사전에 이미 변환된 sql문장을사용하기 때문에 실행 속도면에서도 좋다고 함.
+			데이터베이스가 한번 실행된 sql문장들은 이미 캐싱해놓음
+			
+	2. 구조
+		entity class 상단에 사전에 sql문장 선언
+		sql문장에 이름 부여(매핑)
+		client들로 인해 가변적인 동적 데이터는 ":변수" 표기로 sql에 선언 후 setParameter()로 값 적용하면서 호출
+		
+		

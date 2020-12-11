@@ -1,0 +1,17 @@
+
+
+존재하는 Employee table과 Dept table이 있다는 가정하에 
+-> <property name="hibernate.hbm2ddl.auto" value="none" /> 
+-> create를 none으로 설정
+
+Employee의 deptno는 Dept의 depno를 fk로 참조하는 상황 
+alter명령어 사용  
+-> alter table employee add constraint employee_deptno_fk foreign key (deptno) references dept(deptno);
+
+sql문장으로 사전에 table 제약조건 등 설정 다 해놓고
+
+crud 로직만 구현한다 가정 상황으로 완성
+
+팀단위로 완성하되 최적의 코드로 개발하기!!
+
+emp와 dept와 동격으로 간주 ??
